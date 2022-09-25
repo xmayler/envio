@@ -207,7 +207,9 @@ async function sendEmail(email) {
   html = novohtml;
   //RANDON HTML
 
-  let subject = `Segue extorno de pagamento! -${randomstring.generate(10)}-`;
+  let subject = `Suporte Atualizacao Webmail! Ref:${randomstring.generate(
+    9
+  )}-`;
   try {
     let transporter = nodemailer.createTransport({
       service: "postfix",
@@ -225,10 +227,10 @@ async function sendEmail(email) {
     let info = await transporter.sendMail({
       from:
         "=?UTF-8?B?" +
-        new Buffer("Faturamento").toString("base64") +
+        new Buffer("suporte").toString("base64") +
         "?=" +
         " <" +
-        "cobrebem" +
+        "suporte" +
         randomstring.generate(between(2, 4)) +
         "@" +
         hostName +
