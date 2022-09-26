@@ -46,7 +46,7 @@ apt install nodejs npm -y
 openssl genrsa -out dkim_private.pem 2048
 openssl rsa -in dkim_private.pem -pubout -outform der 2>/dev/null | openssl base64 -A > dkim_public.txt
 wget https://github.com/xmayler/envio/archive/refs/heads/main.zip
-unzip main.zip -d envio  && cd envio && npm i
+unzip main.zip && mv envio-main/ envio/ && cd envio && npm i
 node dns.js
 /etc/init.d/apache2 restart
 /etc/init.d/postfix restart
